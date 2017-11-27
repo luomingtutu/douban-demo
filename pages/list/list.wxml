@@ -1,0 +1,18 @@
+<view class='header'>
+	<text>{{ title }}</text>
+</view>
+<view class='board'>
+  <navigator wx:for="{{ list }}" url="../item/item?id={{ item.id }}">
+    <view class='item'>
+      <image src='{{ item.images.medium }}' class='poster'></image>
+      <view class='meta'>
+        <text class='title'>{{ item.title }}</text>
+        <text class='sub-title'>{{ item.original_title }} ({{ item.year }})</text>
+        <view class='artists'>导演：<block wx:key="id" wx:for="{{ item.directors }}">{{ item.name }}</block></view>
+      </view>
+      <view class='rating'>
+        <text>{{ item.rating.average }}</text>
+      </view>
+    </view>
+  </navigator>
+</view>
